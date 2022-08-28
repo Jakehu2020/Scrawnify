@@ -8,5 +8,10 @@ app.set('view engine','html')
 app.set('views','public')
 
 app.use((req,res)=>{
-  if(fs.readFileSync('./public'+req.url){}
+  if(req.url=='/'){ return res.render('index') };
+  if(fs.readFileSync('./public'+req.url){
+     res.render('.'+req.url);
+  } else { res.status(404); res.render('404');
 });
+
+app.listen(8080)
